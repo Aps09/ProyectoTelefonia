@@ -1,6 +1,5 @@
 package Cliente;
 
-
 import Fecha.Fecha;
 import Tarifa.Tarifa;
 
@@ -18,15 +17,22 @@ public class Cliente implements Fecha{
     //------------------------------------------------------------------
 
     public Cliente(){
-
+        this.nombre = null;
+        this.NIF = null;
+        this.direccion = null;
+        this.correo = null;
+        this.fecha_Alta = null;
+        this.tarifa = new Tarifa();
     }
 
-    //------------------------------------------------------------------
-    // METODOS DE USO
-    //------------------------------------------------------------------
-
-
-
+    public Cliente(String nombre, String NIF, Direccion direccion, String correo, Fecha fecha, Tarifa tarifa){
+        this.nombre = nombre;
+        this.NIF = NIF;
+        this.direccion = direccion;
+        this.correo = correo;
+        this.fecha_Alta = fecha;
+        this.tarifa = tarifa;
+    }
 
 
     //------------------------------------------------------------------
@@ -35,6 +41,10 @@ public class Cliente implements Fecha{
 
     public Fecha getFecha(){
         return this.fecha_Alta;
+    }
+
+    public String getNIF(){
+        return this.NIF;
     }
 
 }
