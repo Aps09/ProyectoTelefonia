@@ -1,6 +1,5 @@
 package Facturas;
 
-import Fecha.Fecha;
 import Tarifa.Tarifa;
 
 public class Factura {

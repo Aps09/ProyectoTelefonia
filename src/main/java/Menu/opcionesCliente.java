@@ -5,7 +5,7 @@ public enum opcionesCliente {
     Borrar_Cliente("Borrar un cliente"),
     Cambiar_Tarifa("Cambiar tarifa de un cliente"),
     Recuperar_Datos_Cliente ("Recuperar datos de un cliente"),
-    Recuperar_Datos_Cliente ("Recuperar datos de todos los clientes"),
+    Recuperar_Datos_Clientes ("Recuperar datos de todos los clientes"),
     Atrás("Ir al menú anterior");
 
     private String description;

@@ -1,7 +1,5 @@
 package Llamadas;
 
-import Fecha.Fecha;
-
 public class Llamada {
 
     private int numeroTelefono;

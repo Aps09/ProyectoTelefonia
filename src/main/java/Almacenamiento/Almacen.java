@@ -10,12 +10,17 @@ import java.util.List;
 
 public class Almacen {
 
-    private HashMap<Cliente,List<Factura>> facturas = new HashMap<Cliente, List<Factura>>();
-    private HashMap<Cliente,List<Llamada>> llamadas = new HashMap<Cliente, List<Llamada>>();
+    private HashMap<Cliente,List<Factura>> facturas;
+    private HashMap<Cliente,List<Llamada>> llamadas;
 
     //------------------------------------------------------------------
     // CONSTRUCTORES
     //------------------------------------------------------------------
+
+    public Almacen(){
+        this.facturas = new HashMap<Cliente, List<Factura>>();
+        this.llamadas = new HashMap<Cliente, List<Llamada>>();
+    }
 
     public Almacen(HashMap<Cliente,List<Factura>> facturas, HashMap<Cliente,List<Llamada>>llamdas){
         this.facturas = facturas;
@@ -36,6 +41,7 @@ public class Almacen {
             if(cliente.getNIF().equals(NIF)){
                 facturas.remove(cliente);
                 llamadas.remove(cliente);
+                break;
             }
         }
     }

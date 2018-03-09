@@ -1,15 +1,16 @@
 package Cliente;
 
-import Fecha.Fecha;
 import Tarifa.Tarifa;
 
-public class Cliente implements Fecha{
+import java.util.Date;
+
+public class Cliente {
 
     private String nombre;
     private String NIF;
     private Direccion direccion;
     private String correo;
-    private Fecha fecha_Alta;
+    private Date fecha_Alta;
     Tarifa tarifa;
 
     //------------------------------------------------------------------
@@ -25,12 +26,12 @@ public class Cliente implements Fecha{
         this.tarifa = new Tarifa();
     }
 
-    public Cliente(String nombre, String NIF, Direccion direccion, String correo, Fecha fecha, Tarifa tarifa){
+    public Cliente(String nombre, String NIF, Direccion direccion, String correo, Tarifa tarifa){
         this.nombre = nombre;
         this.NIF = NIF;
         this.direccion = direccion;
         this.correo = correo;
-        this.fecha_Alta = fecha;
+        this.fecha_Alta = new Date();
         this.tarifa = tarifa;
     }
 
@@ -39,12 +40,36 @@ public class Cliente implements Fecha{
     // GETTERS Y SETTERS
     //------------------------------------------------------------------
 
-    public Fecha getFecha(){
+    public Date getFecha(){
         return this.fecha_Alta;
     }
 
     public String getNIF(){
         return this.NIF;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setNIF(String NIF) {
+        this.NIF = NIF;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void setFecha_Alta(Date fecha_Alta) {
+        this.fecha_Alta = fecha_Alta;
+    }
+
+    public void setTarifa(Tarifa tarifa) {
+        this.tarifa = tarifa;
     }
 
 }

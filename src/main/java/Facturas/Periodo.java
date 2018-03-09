@@ -1,7 +1,5 @@
 package Facturas;
 
-import Fecha.Fecha;
-
 public class Periodo {
     Fecha inicio;
     Fecha fin;

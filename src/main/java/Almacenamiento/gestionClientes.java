@@ -1,9 +1,7 @@
 package Almacenamiento;
 
 import Cliente.Cliente;
-import Cliente.Direccion;
-import Fecha.Fecha;
-import Tarifa.Tarifa;
+import Interfaz.datosCliente;
 
 public class gestionClientes {
 
@@ -21,8 +19,8 @@ public class gestionClientes {
     // METODOS DE USO
     //------------------------------------------------------------------
 
-    public void addCliente(String nombre, String NIF, Direccion direccion, String correo, Fecha fecha, Tarifa tarifa){
-        Cliente cliente = new Cliente(nombre, NIF, direccion, correo, fecha, tarifa);
+    public void addCliente(){
+        Cliente cliente = datosCliente.addCliente();
         almacen.addCliente(cliente);
     }
 
@@ -36,5 +34,9 @@ public class gestionClientes {
 
     public void getDatosClientes(){
 
+    }
+
+    public Almacen getAlmacen() {
+        return almacen;
     }
 }
