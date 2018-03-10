@@ -11,7 +11,7 @@ public class Cliente {
     private Direccion direccion;
     private String correo;
     private Date fecha_Alta;
-    Tarifa tarifa;
+    private Tarifa tarifa;
 
     //------------------------------------------------------------------
     // CONSTRUCTORES
@@ -37,7 +37,7 @@ public class Cliente {
 
 
     //------------------------------------------------------------------
-    // GETTERS Y SETTERS
+    // GETTERS
     //------------------------------------------------------------------
 
     public Date getFecha(){
@@ -46,22 +46,6 @@ public class Cliente {
 
     public String getNIF(){
         return this.NIF;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setNIF(String NIF) {
-        this.NIF = NIF;
-    }
-
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
     }
 
     public String getNombre() {
@@ -80,6 +64,11 @@ public class Cliente {
         return tarifa;
     }
 
+
+    //------------------------------------------------------------------
+    // SETTERS
+    //------------------------------------------------------------------
+
     public void setFecha_Alta(Date fecha_Alta) {
         this.fecha_Alta = fecha_Alta;
     }
@@ -87,6 +76,27 @@ public class Cliente {
     public void setTarifa(Tarifa tarifa) {
         this.tarifa = tarifa;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setNIF(String NIF) {
+        this.NIF = NIF;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+
+    //------------------------------------------------------------------
+    // TO STRING
+    //------------------------------------------------------------------
 
     public void toString(Cliente cliente){
         System.out.print("Nombre: "+ cliente.getNombre() +
@@ -96,5 +106,4 @@ public class Cliente {
                 "\n Fecha de alta: " + cliente.getFecha().toString() +
                 "\n Tarifa: "+ cliente.getTarifa() + "€/min");
     }
-
 }

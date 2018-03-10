@@ -7,6 +7,10 @@ public class Direccion {
     int piso;
     String puerta;
 
+    // -----------------------------------------------
+    // CONSTRUCTORES
+    // -----------------------------------------------
+
     public Direccion(String calle, int num, int piso, String puerta){
         this.calle = calle;
         this.num = num;
@@ -15,7 +19,7 @@ public class Direccion {
     }
 
     // -------------------------------------------------------------------------
-    // GETTERS Y SETTERS
+    // GETTERS
     // -------------------------------------------------------------------------
 
     public String getCalle() {

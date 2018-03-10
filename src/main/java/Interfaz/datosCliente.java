@@ -11,9 +11,9 @@ public class datosCliente {
 
     private static Cliente cliente = new Cliente();
 
-    public datosCliente(){
-        this.cliente = new Cliente();
-    }
+    // ----------------------------------------------------------
+    // METODOS DE USO
+    // ----------------------------------------------------------
 
     public static Cliente addCliente(){
         Scanner scan = new Scanner(System.in);
@@ -62,6 +62,7 @@ public class datosCliente {
     public static String deleteCliente(){
         Scanner scan = new Scanner(System.in);
 
+        // NIF
         System.out.println("Indique el NIF del cliente que quiere borrar: ");
         String NIF = scan.next();
 
@@ -71,6 +72,7 @@ public class datosCliente {
     public static String getDatos(){
         Scanner scan = new Scanner(System.in);
 
+        // NIF
         System.out.println("Indique el NIF del cliente que quieras recoger los datos: ");
         String NIF = scan.next();
 
@@ -80,6 +82,7 @@ public class datosCliente {
     public static String getNIFTarifa(){
         Scanner scan = new Scanner(System.in);
 
+        // NIF
         System.out.print("Indique el NIF del cliente que quiera cambiar la tarifa: ");
         String NIF = scan.next();
 
@@ -89,6 +92,7 @@ public class datosCliente {
     public static int getCantTarifa(){
         Scanner scan = new Scanner(System.in);
 
+        // CANTIDAD
         System.out.print("Indique la cantidad con la que quiere actualizar la tarifa: ");
         int cant = scan.nextInt();
 

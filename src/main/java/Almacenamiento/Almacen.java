@@ -32,12 +32,13 @@ public class Almacen {
     //------------------------------------------------------------------
 
     public void addCliente(Cliente cliente){
+        // Añadimos un cliente en cada lista de facturas y llamadas
         facturas.put(cliente, new ArrayList<Factura>());
         llamadas.put(cliente, new ArrayList<Llamada>());
-        System.out.println("Usuario añadido correctamente");
     }
 
     public void deleteCliente(String NIF){
+        // Lo buscamos en una lista y lo borramos en ambas
         for(Cliente cliente : facturas.keySet()){
             if(cliente.getNIF().equals(NIF)){
                 facturas.remove(cliente);
@@ -48,6 +49,7 @@ public class Almacen {
     }
 
     public Cliente getCliente(String NIF){
+        // Como en el anterior, lo buscamos y lo enviamos
         for(Cliente cliente : facturas.keySet()){
             if(cliente.getNIF().equals(NIF))
                 return cliente;
@@ -56,6 +58,7 @@ public class Almacen {
     }
 
     public ArrayList<Cliente> getClientes(){
+        // Vamos añadiendo cada cliente a una lista que será nuestro resultado
         ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
         for(Cliente cliente : facturas.keySet())
             listaClientes.add(cliente);
@@ -64,7 +67,7 @@ public class Almacen {
 
 
     //------------------------------------------------------------------
-    // GESTION LLAMDAS
+    // GESTION LLAMADAS
     //------------------------------------------------------------------
 
     public void addLlamada(Cliente cliente){
