@@ -13,12 +13,12 @@ public class MenuPrincipal {
         Scanner scan = new Scanner(System.in);
 
         do {
-
+            System.out.println("");
             for (opcionesMenuPrincipal m : menu) {
                 System.out.printf("%d) %s%n", m.ordinal() + 1, m.name());
             }
 
-            System.out.println("Elija una opción: ");
+            System.out.print("Elija una opción: ");
             opc = scan.nextInt();
 
             switch (opc){
@@ -28,11 +28,11 @@ public class MenuPrincipal {
                     break;
                 case 2:
                     //MENU DE LLAMADAS
-
+                    almacen = MenuLlamadas.main(almacen);
                     break;
                 case 3:
                     //MENU DE FACTURAS
-
+                    
                     break;
             }
 

@@ -18,6 +18,7 @@ public class MenuClientes {
 
         // Mostramos menú
         do{
+            System.out.println("");
             for (opcionesCliente m : menu) {
                 System.out.printf("%d) %s%n", m.ordinal() + 1, m.name());
             }

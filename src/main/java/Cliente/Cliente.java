@@ -98,12 +98,13 @@ public class Cliente {
     // TO STRING
     //------------------------------------------------------------------
 
-    public void toString(Cliente cliente){
-        System.out.print("Nombre: "+ cliente.getNombre() +
+    public String toString(Cliente cliente){
+        String mensaje = "Nombre: "+ cliente.getNombre() +
                 "\n NIF: "+ cliente.getNIF() +
                 "\n Dirección: "+ cliente.direccion.getCalle() + ", nº"+ cliente.direccion.getNum() + ", "+ cliente.direccion.getPiso() +"º "+cliente.direccion.getPuerta() +
                 "\n Correo: "+ cliente.getCorreo() +
                 "\n Fecha de alta: " + cliente.getFecha().toString() +
-                "\n Tarifa: "+ cliente.getTarifa() + "€/min");
+                "\n Tarifa: "+ cliente.getTarifa() + "€/min";
+        return mensaje;
     }
 }

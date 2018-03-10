@@ -10,19 +10,19 @@ import java.util.List;
 
 public class Almacen {
 
-    private HashMap<Cliente,List<Factura>> facturas;
-    private HashMap<Cliente,List<Llamada>> llamadas;
+    private HashMap<Cliente,ArrayList<Factura>> facturas;
+    private HashMap<Cliente,ArrayList<Llamada>> llamadas;
 
     //------------------------------------------------------------------
     // CONSTRUCTORES
     //------------------------------------------------------------------
 
     public Almacen(){
-        this.facturas = new HashMap<Cliente, List<Factura>>();
-        this.llamadas = new HashMap<Cliente, List<Llamada>>();
+        this.facturas = new HashMap<Cliente, ArrayList<Factura>>();
+        this.llamadas = new HashMap<Cliente, ArrayList<Llamada>>();
     }
 
-    public Almacen(HashMap<Cliente,List<Factura>> facturas, HashMap<Cliente,List<Llamada>>llamdas){
+    public Almacen(HashMap<Cliente,ArrayList<Factura>> facturas, HashMap<Cliente,ArrayList<Llamada>>llamdas){
         this.facturas = facturas;
         this.llamadas = llamdas;
     }
@@ -70,12 +70,19 @@ public class Almacen {
     // GESTION LLAMADAS
     //------------------------------------------------------------------
 
-    public void addLlamada(Cliente cliente){
-
+    public void addLlamada(String NIF, Llamada llamada){
+        for(Cliente cliente : llamadas.keySet()){
+            if(cliente.getNIF().equals(NIF))
+                llamadas.get(cliente).add(llamada);
+        }
     }
 
-    public List<Llamada> getLlamadas(Cliente cliente){
-        return new ArrayList<Llamada>();
+    public ArrayList<Llamada> getLlamadas(String NIF){
+        for(Cliente cliente : llamadas.keySet()){
+            if(cliente.getNIF().equals(NIF))
+                return this.llamadas.get(cliente);
+        }
+        return null;
     }
 
     //------------------------------------------------------------------

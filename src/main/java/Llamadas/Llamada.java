@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Llamada {
 
-    private int numeroTelefono;
+    private String numeroTelefono;
     private Date fechaLlamada;
     private double duracion;
 
@@ -13,12 +13,12 @@ public class Llamada {
     //------------------------------------------------------------------
 
     public Llamada(){
-        this.numeroTelefono = 0;
+        this.numeroTelefono = null;
         this.fechaLlamada = null;
         this.duracion = -1;
     }
 
-    public Llamada(int numeroTelefono, Date fecha, double duracion){
+    public Llamada(String numeroTelefono, Date fecha, double duracion){
         this.numeroTelefono = numeroTelefono;
         this.fechaLlamada = fecha;
         this.duracion = duracion;
@@ -35,14 +35,32 @@ public class Llamada {
     // GETTERS
     //------------------------------------------------------------------
 
+    public String getNumeroTelefono() {
+        return numeroTelefono;
+    }
+
+    public Date getFechaLlamada() {
+        return fechaLlamada;
+    }
+
+    public double getDuracion() {
+        return duracion;
+    }
 
 
     //------------------------------------------------------------------
     // SETTERS
     //------------------------------------------------------------------
 
+    public void setFechaLlamada(Date fechaLlamada) {
+        this.fechaLlamada = fechaLlamada;
+    }
 
+    public void setDuracion(double duracion) {
+        this.duracion = duracion;
+    }
 
-
-
+    public void setNumeroTelefono(String numeroTelefono) {
+        this.numeroTelefono = numeroTelefono;
+    }
 }

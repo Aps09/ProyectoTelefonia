@@ -9,13 +9,12 @@ import java.util.Scanner;
 
 public class datosCliente {
 
-    private static Cliente cliente = new Cliente();
-
     // ----------------------------------------------------------
     // METODOS DE USO
     // ----------------------------------------------------------
 
     public static Cliente addCliente(){
+        Cliente cliente = new Cliente();
         Scanner scan = new Scanner(System.in);
 
         // Nombre
