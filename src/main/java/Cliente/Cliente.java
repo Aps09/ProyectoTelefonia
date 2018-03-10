@@ -64,12 +64,37 @@ public class Cliente {
         this.correo = correo;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public Tarifa getTarifa() {
+        return tarifa;
+    }
+
     public void setFecha_Alta(Date fecha_Alta) {
         this.fecha_Alta = fecha_Alta;
     }
 
     public void setTarifa(Tarifa tarifa) {
         this.tarifa = tarifa;
+    }
+
+    public void toString(Cliente cliente){
+        System.out.print("Nombre: "+ cliente.getNombre() +
+                "\n NIF: "+ cliente.getNIF() +
+                "\n Dirección: "+ cliente.direccion.getCalle() + ", nº"+ cliente.direccion.getNum() + ", "+ cliente.direccion.getPiso() +"º "+cliente.direccion.getPuerta() +
+                "\n Correo: "+ cliente.getCorreo() +
+                "\n Fecha de alta: " + cliente.getFecha().toString() +
+                "\n Tarifa: "+ cliente.getTarifa() + "€/min");
     }
 
 }

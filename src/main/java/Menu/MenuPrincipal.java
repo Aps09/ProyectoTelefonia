@@ -9,10 +9,10 @@ public class MenuPrincipal {
     public static void main (String[] args){
         Almacen almacen = new Almacen();
         opcionesMenuPrincipal[] menu = values();
-        int opc = 1;
+        int opc;
         Scanner scan = new Scanner(System.in);
 
-        while(opc != 4) {
+        do {
 
             for (opcionesMenuPrincipal m : menu) {
                 System.out.printf("%d) %s%n", m.ordinal() + 1, m.name());
@@ -36,7 +36,7 @@ public class MenuPrincipal {
                     break;
             }
 
-        }
+        }while (opc != 4);
     }
 
 }

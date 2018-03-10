@@ -1,9 +1,11 @@
 package Llamadas;
 
+import java.util.Date;
+
 public class Llamada {
 
     private int numeroTelefono;
-    private Fecha fechaLlamada;
+    private Date fechaLlamada;
     private double duracion;
 
     //------------------------------------------------------------------
@@ -16,7 +18,7 @@ public class Llamada {
         this.duracion = -1;
     }
 
-    public Llamada(int numeroTelefono, Fecha fecha, double duracion){
+    public Llamada(int numeroTelefono, Date fecha, double duracion){
         this.numeroTelefono = numeroTelefono;
         this.fechaLlamada = fecha;
         this.duracion = duracion;

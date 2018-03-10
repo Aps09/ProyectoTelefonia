@@ -34,6 +34,7 @@ public class Almacen {
     public void addCliente(Cliente cliente){
         facturas.put(cliente, new ArrayList<Factura>());
         llamadas.put(cliente, new ArrayList<Llamada>());
+        System.out.println("Usuario añadido correctamente");
     }
 
     public void deleteCliente(String NIF){
@@ -47,11 +48,18 @@ public class Almacen {
     }
 
     public Cliente getCliente(String NIF){
-        return new Cliente();
+        for(Cliente cliente : facturas.keySet()){
+            if(cliente.getNIF().equals(NIF))
+                return cliente;
+        }
+        return null;
     }
 
-    public List<Cliente> getClientes(){
-        return new ArrayList<Cliente>();
+    public ArrayList<Cliente> getClientes(){
+        ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
+        for(Cliente cliente : facturas.keySet())
+            listaClientes.add(cliente);
+        return listaClientes;
     }
 
 

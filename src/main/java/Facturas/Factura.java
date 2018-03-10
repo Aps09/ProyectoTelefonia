@@ -2,11 +2,13 @@ package Facturas;
 
 import Tarifa.Tarifa;
 
+import java.util.Date;
+
 public class Factura {
 
     private int codigo;
     private Tarifa tarifa;
-    private Fecha fechaEmision;
+    private Date fechaEmision;
     private Periodo periodo;
     private int importe;
 
@@ -22,7 +24,7 @@ public class Factura {
         this.importe = -1;
     }
 
-    public Factura(int codigo, Tarifa tarifa, Fecha fechaEmision, Periodo periodo, int importe){
+    public Factura(int codigo, Tarifa tarifa, Date fechaEmision, Periodo periodo, int importe){
         this.codigo = codigo;
         this.tarifa = tarifa;
         this.fechaEmision = fechaEmision;

@@ -2,7 +2,6 @@ package Interfaz;
 
 import Cliente.Cliente;
 import Cliente.Direccion;
-import Fecha.Fecha;
 import Tarifa.Tarifa;
 
 import java.util.Date;
@@ -10,10 +9,10 @@ import java.util.Scanner;
 
 public class datosCliente {
 
-    private static Cliente cliente;
+    private static Cliente cliente = new Cliente();
 
     public datosCliente(){
-        this.cliente = null;
+        this.cliente = new Cliente();
     }
 
     public static Cliente addCliente(){
@@ -28,12 +27,12 @@ public class datosCliente {
         cliente.setNIF(scan.next());
 
         // Direccion
-        Cliente.Direccion dir;
+        Direccion dir;
 
         System.out.println("Indique la calle donde vive el cliente: ");
         String calle = scan.next();
 
-        System.out.println("Indiqueel número del portal del cliente: ");
+        System.out.println("Indique el número del portal del cliente: ");
         int num = scan.nextInt();
 
         System.out.println("Indique el piso donde vive el cliente: ");
@@ -60,7 +59,41 @@ public class datosCliente {
         return cliente;
     }
 
+    public static String deleteCliente(){
+        Scanner scan = new Scanner(System.in);
 
+        System.out.println("Indique el NIF del cliente que quiere borrar: ");
+        String NIF = scan.next();
+
+        return NIF;
+    }
+
+    public static String getDatos(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Indique el NIF del cliente que quieras recoger los datos: ");
+        String NIF = scan.next();
+
+        return NIF;
+    }
+
+    public static String getNIFTarifa(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Indique el NIF del cliente que quiera cambiar la tarifa: ");
+        String NIF = scan.next();
+
+        return NIF;
+    }
+
+    public static int getCantTarifa(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Indique la cantidad con la que quiere actualizar la tarifa: ");
+        int cant = scan.nextInt();
+
+        return cant;
+    }
 
 
 }

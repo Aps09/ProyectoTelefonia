@@ -1,15 +1,17 @@
 package Facturas;
 
+import java.util.Date;
+
 public class Periodo {
-    Fecha inicio;
-    Fecha fin;
+    Date inicio;
+    Date fin;
 
     public Periodo() {
         this.inicio = null;
         this.fin = null;
     }
 
-    public Periodo (Fecha inicio, Fecha fin){
+    public Periodo (Date inicio, Date fin){
         this.inicio = inicio;
         this.fin = fin;
     }
