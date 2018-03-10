@@ -2,6 +2,7 @@ package Cliente;
 
 public class Direccion {
 
+    String provincia;
     String calle;
     int num;
     int piso;
@@ -11,7 +12,8 @@ public class Direccion {
     // CONSTRUCTORES
     // -----------------------------------------------
 
-    public Direccion(String calle, int num, int piso, String puerta){
+    public Direccion(String provincia, String calle, int num, int piso, String puerta){
+        this.provincia = provincia;
         this.calle = calle;
         this.num = num;
         this.piso = piso;

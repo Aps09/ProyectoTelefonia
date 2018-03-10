@@ -89,16 +89,16 @@ public class Almacen {
     // GESTION DE FACTURAS
     //------------------------------------------------------------------
 
-    public void addFactura() {
+    public void emitirFactura() {
 
     }
 
     public Factura getFactura(){
-        return new Factura();
+
     }
 
-    public List<Factura> getFacturas(Cliente cliente){
-        return new ArrayList<Factura>();
+    public List<Factura> getFacturas(){
+
     }
 
 }

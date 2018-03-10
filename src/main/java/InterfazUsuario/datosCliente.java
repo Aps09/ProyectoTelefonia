@@ -1,4 +1,4 @@
-package Interfaz;
+package InterfazUsuario;
 
 import Cliente.Cliente;
 import Cliente.Direccion;
@@ -28,6 +28,9 @@ public class datosCliente {
         // Direccion
         Direccion dir;
 
+        System.out.println("Indique la provincia en la que habita el cliente: ");
+        String provincia = scan.next();
+
         System.out.println("Indique la calle donde vive el cliente: ");
         String calle = scan.next();
 
@@ -40,7 +43,7 @@ public class datosCliente {
         System.out.println("Indique la puerta donde vive el cliente: ");
         String puerta = scan.next();
 
-        dir = new Direccion(calle,num,piso,puerta);
+        dir = new Direccion(provincia,calle,num,piso,puerta);
         cliente.setDireccion(dir);
 
         // Correo

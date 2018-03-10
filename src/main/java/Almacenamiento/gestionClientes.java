@@ -1,7 +1,7 @@
 package Almacenamiento;
 
 import Cliente.Cliente;
-import Interfaz.datosCliente;
+import InterfazUsuario.datosCliente;
 import Tarifa.Tarifa;
 
 import java.util.ArrayList;

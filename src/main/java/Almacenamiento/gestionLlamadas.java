@@ -1,6 +1,6 @@
 package Almacenamiento;
 
-import Interfaz.datosLlamada;
+import InterfazUsuario.datosLlamada;
 import Llamadas.Llamada;
 
 import java.util.ArrayList;

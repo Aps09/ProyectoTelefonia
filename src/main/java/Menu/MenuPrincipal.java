@@ -32,7 +32,7 @@ public class MenuPrincipal {
                     break;
                 case 3:
                     //MENU DE FACTURAS
-                    
+                    almacen = MenuFacturas.main(almacen);
                     break;
             }
 
