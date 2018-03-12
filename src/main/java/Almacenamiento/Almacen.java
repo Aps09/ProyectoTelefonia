@@ -5,7 +5,9 @@ import Facturas.Factura;
 import Llamadas.Llamada;
 import com.sun.deploy.util.SessionState;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -92,15 +94,20 @@ public class Almacen {
     // GESTION DE FACTURAS
     //------------------------------------------------------------------
 
-    public void emitirFactura() {
-
+    public void emitirFactura(String NIF, Factura factura) {
+        // Le asignamos un código único que será el tamaño de la lista + 1
+        factura.setCodigo(this.facturas.size()+1);
+        // Lo colocamos al cliente adecuado
+        for(Cliente cliente : facturas.keySet())
+            if(cliente.getNIF().equals(NIF))
+                facturas.get(cliente).add(factura);
     }
 
-    public Factura getFactura(String id){
+    public Factura getFactura(int id){
         // Recorremos los clientes y cogemos la factura que tenga el codigo
         for (Cliente cliente : facturas.keySet()){
             for (Factura factura : facturas.get(cliente)){
-                if(factura.getCodigo().equals(id))
+                if(factura.getCodigo() == id)
                     return factura;
             }
         }

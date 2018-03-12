@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Factura {
 
-    private String codigo;
+    private int codigo;
     private Tarifa tarifa;
     private Date fechaEmision;
     private Periodo periodo;
@@ -17,14 +17,14 @@ public class Factura {
     //------------------------------------------------------------------
 
     public Factura(){
-        this.codigo = null;
+        this.codigo = -1;
         this.tarifa = new Tarifa();
         this.fechaEmision = null;
         this.periodo = new Periodo();
         this.importe = -1;
     }
 
-    public Factura(String codigo, Tarifa tarifa, Date fechaEmision, Periodo periodo, int importe){
+    public Factura(int codigo, Tarifa tarifa, Date fechaEmision, Periodo periodo, int importe){
         this.codigo = codigo;
         this.tarifa = tarifa;
         this.fechaEmision = fechaEmision;
@@ -37,7 +37,7 @@ public class Factura {
     // GETTERS
     //------------------------------------------------------------------
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
@@ -61,7 +61,7 @@ public class Factura {
     // SETTERS
     //------------------------------------------------------------------
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
