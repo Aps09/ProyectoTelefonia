@@ -28,10 +28,16 @@ public class Tarifa {
     // GETTERS
     //------------------------------------------------------------------
 
-
+    public int getCantidad() {
+        return cantidad;
+    }
 
 
     //------------------------------------------------------------------
     // SETTERS
     //------------------------------------------------------------------
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
 }

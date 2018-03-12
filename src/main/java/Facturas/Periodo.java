@@ -19,4 +19,16 @@ public class Periodo {
         this.inicio = inicio;
         this.fin = fin;
     }
+
+    // -------------------------------------------------
+    // GETTERS
+    // -------------------------------------------------
+
+    public Date getInicio() {
+        return inicio;
+    }
+
+    public Date getFin() {
+        return fin;
+    }
 }

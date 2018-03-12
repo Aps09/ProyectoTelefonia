@@ -3,6 +3,7 @@ package Almacenamiento;
 import Cliente.Cliente;
 import Facturas.Factura;
 import Llamadas.Llamada;
+import com.sun.deploy.util.SessionState;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -71,6 +72,7 @@ public class Almacen {
     //------------------------------------------------------------------
 
     public void addLlamada(String NIF, Llamada llamada){
+        // Recorremos los clientes y le añadimos la llamada a la lista
         for(Cliente cliente : llamadas.keySet()){
             if(cliente.getNIF().equals(NIF))
                 llamadas.get(cliente).add(llamada);
@@ -78,6 +80,7 @@ public class Almacen {
     }
 
     public ArrayList<Llamada> getLlamadas(String NIF){
+        // Recorremos la lista de clientes y devolvemos sus llamadas
         for(Cliente cliente : llamadas.keySet()){
             if(cliente.getNIF().equals(NIF))
                 return this.llamadas.get(cliente);
@@ -93,12 +96,24 @@ public class Almacen {
 
     }
 
-    public Factura getFactura(){
-
+    public Factura getFactura(String id){
+        // Recorremos los clientes y cogemos la factura que tenga el codigo
+        for (Cliente cliente : facturas.keySet()){
+            for (Factura factura : facturas.get(cliente)){
+                if(factura.getCodigo().equals(id))
+                    return factura;
+            }
+        }
+        return null;
     }
 
-    public List<Factura> getFacturas(){
-
+    public ArrayList<Factura> getFacturas(String NIF){
+        // Recorremos los clientes y mandamos la lista de facturas que pertenezca al cliente
+        for(Cliente cliente : facturas.keySet()){
+            if(cliente.getNIF().equals(NIF))
+                return facturas.get(cliente);
+        }
+        return null;
     }
 
 }

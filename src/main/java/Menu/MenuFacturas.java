@@ -29,15 +29,15 @@ public class MenuFacturas {
             switch(opc){
                 case 1:
                     // Emitir factura
-
+                    gestion.emitirFactura();
                     break;
                 case 2:
                     // Recuperar datos de una factura (a partir de codigo)
-
+                    gestion.recuperarFactura();
                     break;
                 case 3:
                     // Recuperar facturas de un cliente
-
+                    gestion.recuperarFacturasCliente();
                     break;
             }
         }while (opc != 4);
