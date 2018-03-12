@@ -95,12 +95,14 @@ public class Almacen {
     //------------------------------------------------------------------
 
     public void emitirFactura(String NIF, Factura factura) {
-        // Le asignamos un código único que será el tamaño de la lista + 1
-        factura.setCodigo(this.facturas.size()+1);
         // Lo colocamos al cliente adecuado
         for(Cliente cliente : facturas.keySet())
-            if(cliente.getNIF().equals(NIF))
+            if(cliente.getNIF().equals(NIF)){
+                // Asignamos un codigo diferente para cada factura de cada cliente
+                factura.setCodigo(facturas.get(cliente).size()+1);
                 facturas.get(cliente).add(factura);
+            }
+
     }
 
     public Factura getFactura(int id){
@@ -122,5 +124,4 @@ public class Almacen {
         }
         return null;
     }
-
 }

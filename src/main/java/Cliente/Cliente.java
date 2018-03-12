@@ -1,8 +1,7 @@
 package Cliente;
 
+import Fecha.Fecha;
 import Tarifa.Tarifa;
-
-import java.util.Date;
 
 public class Cliente {
 
@@ -10,7 +9,7 @@ public class Cliente {
     private String NIF;
     private Direccion direccion;
     private String correo;
-    private Date fecha_Alta;
+    private Fecha fecha_Alta;
     private Tarifa tarifa;
 
     //------------------------------------------------------------------
@@ -26,12 +25,12 @@ public class Cliente {
         this.tarifa = new Tarifa();
     }
 
-    public Cliente(String nombre, String NIF, Direccion direccion, String correo, Tarifa tarifa){
+    public Cliente(String nombre, String NIF, Direccion direccion, Fecha fecha, String correo, Tarifa tarifa){
         this.nombre = nombre;
         this.NIF = NIF;
         this.direccion = direccion;
         this.correo = correo;
-        this.fecha_Alta = new Date();
+        this.fecha_Alta = fecha;
         this.tarifa = tarifa;
     }
 
@@ -40,7 +39,7 @@ public class Cliente {
     // GETTERS
     //------------------------------------------------------------------
 
-    public Date getFecha(){
+    public Fecha getFecha(){
         return this.fecha_Alta;
     }
 
@@ -69,7 +68,7 @@ public class Cliente {
     // SETTERS
     //------------------------------------------------------------------
 
-    public void setFecha_Alta(Date fecha_Alta) {
+    public void setFecha_Alta(Fecha fecha_Alta) {
         this.fecha_Alta = fecha_Alta;
     }
 
@@ -98,13 +97,13 @@ public class Cliente {
     // TO STRING
     //------------------------------------------------------------------
 
-    public String toString(Cliente cliente){
-        String mensaje = "Nombre: "+ cliente.getNombre() +
-                "\n NIF: "+ cliente.getNIF() +
-                "\n Dirección: "+ cliente.direccion.getCalle() + ", nº"+ cliente.direccion.getNum() + ", "+ cliente.direccion.getPiso() +"º "+cliente.direccion.getPuerta() +
-                "\n Correo: "+ cliente.getCorreo() +
-                "\n Fecha de alta: " + cliente.getFecha().toString() +
-                "\n Tarifa: "+ cliente.getTarifa() + "€/min";
-        return mensaje;
+    @Override
+    public String toString() {
+        return "Nombre = " + nombre + "\n" +
+                "NIF = " + NIF + "\n" +
+                "Direccion = " + direccion.toString() + "\n" +
+                "Correo = " + correo + "\n" +
+                "Fecha de alta = " + fecha_Alta.toString() + "\n" +
+                "Tarifa = " + tarifa.getCantidad() + "€/min";
     }
 }

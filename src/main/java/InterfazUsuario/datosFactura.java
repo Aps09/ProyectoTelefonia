@@ -1,7 +1,8 @@
 package InterfazUsuario;
 
 
-import java.util.Date;
+import Fecha.Fecha;
+
 import java.util.Scanner;
 
 public class datosFactura {
@@ -15,6 +16,9 @@ public class datosFactura {
     //METODOS DE EMITIR FACTURA
 
     public static String emitirFacturaNIF(){
+        System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
+        System.out.println(" ");
+
         // NIF
         System.out.print("Indique el NIF del cliente que desea generar una factura: ");
         String NIF = scan.next();
@@ -22,9 +26,24 @@ public class datosFactura {
         return NIF;
     }
 
-    public static Date[] pedirFechas(){
-        Date inicio;
-        Date fin;
+    public static Fecha getFechaEmision(){
+
+        System.out.print("Indique el día de emisión de la factura: ");
+        int dia = scan.nextInt();
+
+        System.out.print("Indique el mes de emisión de la factura: ");
+        int mes = scan.nextInt();
+
+        System.out.print("Indique el año de emisión de la factura: ");
+        int anyo = scan.nextInt();
+
+        Fecha fecha = new Fecha(dia,mes,anyo);
+        return fecha;
+    }
+
+    public static Fecha[] pedirFechas(){
+        Fecha inicio;
+        Fecha fin;
 
         System.out.print("Indique el día de la primera fecha: ");
         int dia = scan.nextInt();
@@ -35,7 +54,7 @@ public class datosFactura {
         System.out.print("Indique el año de la primera fecha: ");
         int anyo = scan.nextInt();
 
-        inicio = new Date(anyo,mes,dia);
+        inicio = new Fecha(dia,mes,anyo);
 
         // --------------------------------------------
         System.out.print("Indique el día de la segunda fecha: ");
@@ -47,10 +66,10 @@ public class datosFactura {
         System.out.print("Indique el año de la segunda fecha: ");
         anyo = scan.nextInt();
 
-        fin = new Date(anyo,mes,dia);
+        fin = new Fecha(dia,mes,anyo);
 
 
-        Date[] rango = new Date[2];
+        Fecha[] rango = new Fecha[2];
         rango[0] = inicio;
         rango[1] = fin;
         return rango;
@@ -59,6 +78,8 @@ public class datosFactura {
     //METODOS DE RECUPERAR FACTURA
 
     public static int recuperarFacturaID(){
+        System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
+        System.out.println(" ");
 
         // Código
         System.out.print("Indique el código de la factura que desea visualizar: ");
@@ -70,9 +91,11 @@ public class datosFactura {
     //METODOS DE RECUPERAR FACTURAS
 
     public static String recuperarFacturaClienteNIF(){
+        System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
+        System.out.println(" ");
 
         // NIF
-        System.out.println("Indique el NIF del cliente que desea ver sus facturas emitidas: ");
+        System.out.print("Indique el NIF del cliente que desea ver sus facturas emitidas: ");
         String NIF = scan.next();
 
         return NIF;

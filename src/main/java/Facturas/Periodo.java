@@ -1,10 +1,11 @@
 package Facturas;
 
-import java.util.Date;
+import Fecha.Fecha;
+
 
 public class Periodo {
-    Date inicio;
-    Date fin;
+    Fecha inicio;
+    Fecha fin;
 
     // -----------------------------------------------
     // CONSTRUCTORES
@@ -15,7 +16,7 @@ public class Periodo {
         this.fin = null;
     }
 
-    public Periodo (Date inicio, Date fin){
+    public Periodo (Fecha inicio, Fecha fin){
         this.inicio = inicio;
         this.fin = fin;
     }
@@ -24,11 +25,11 @@ public class Periodo {
     // GETTERS
     // -------------------------------------------------
 
-    public Date getInicio() {
+    public Fecha getInicio() {
         return inicio;
     }
 
-    public Date getFin() {
+    public Fecha getFin() {
         return fin;
     }
 }

@@ -3,11 +3,12 @@ package Almacenamiento;
 import Cliente.Cliente;
 import Facturas.Factura;
 import Facturas.Periodo;
+import Fecha.Fecha;
 import InterfazUsuario.datosFactura;
 import Llamadas.Llamada;
 
+import java.awt.peer.SystemTrayPeer;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class gestionFacturas {
 
@@ -29,7 +30,7 @@ public class gestionFacturas {
         // Creamos todas las variables que nos ayudara a crear y organizar la factura
         Factura factura = new Factura();
         String NIF = datosFactura.emitirFacturaNIF();
-        Date[] rango = datosFactura.pedirFechas();
+        Fecha[] rango = datosFactura.pedirFechas();
         Periodo periodo = new Periodo(rango[0],rango[1]);
         Cliente cliente = almacen.getCliente(NIF);
 
@@ -37,12 +38,14 @@ public class gestionFacturas {
         ArrayList<Llamada> llamadas = this.encontrarLlamadas(NIF,rango);
 
         // Calcular con las llamadas válidas
-        int importe = 0;
-        for(Llamada llamada : llamadas)
+        double importe = 0;
+        for(Llamada llamada : llamadas) {
             importe += cliente.getTarifa().getCantidad() * llamada.getDuracion();
+        }
 
         // Crear factura
-        factura.setFechaEmision(new Date());
+        Fecha fecha = datosFactura.getFechaEmision();
+        factura.setFechaEmision(fecha);
         factura.setImporte(importe);
         factura.setPeriodo(periodo);
         factura.setTarifa(cliente.getTarifa());
@@ -52,14 +55,14 @@ public class gestionFacturas {
         almacen.emitirFactura(NIF,factura);
     }
 
-    public ArrayList<Llamada> encontrarLlamadas (String NIF, Date[] rango){
+    public ArrayList<Llamada> encontrarLlamadas (String NIF, Fecha[] rango){
         // Recogemos las llamadas del cliente en cuestión
         ArrayList<Llamada> llamadas = almacen.getLlamadas(NIF);
 
         // Vamos comparando las fechas de cada llamada y comprobamos que se encuentren en el rango proporcionado
         ArrayList<Llamada> validas = new ArrayList<Llamada>();
-        for(Llamada llamada : llamadas){
-            if(llamada.getFechaLlamada().compareTo(rango[0])>=0 && llamada.getFechaLlamada().compareTo(rango[1])<=0)
+        for(Llamada llamada : llamadas) {
+            if (llamada.getFechaLlamada().compareTo(rango[0]) >= 0 && llamada.getFechaLlamada().compareTo(rango[1]) <= 0)
                 validas.add(llamada);
         }
 
@@ -71,8 +74,10 @@ public class gestionFacturas {
         // Mediante el id de la factura recuperamos la factura y la ponemos en pantalla
         int id = datosFactura.recuperarFacturaID();
         Factura factura = almacen.getFactura(id);
+        System.out.println("\n");
         if(factura != null)
             System.out.print(factura.toString());
+        System.out.println("\n");
     }
 
     public void recuperarFacturasCliente(){
@@ -81,11 +86,11 @@ public class gestionFacturas {
         ArrayList<Factura> facturas = almacen.getFacturas(NIF);
         if(facturas != null){
             for(Factura factura : facturas) {
-                System.out.println("");
-                System.out.print("Código: " + factura.getCodigo() + "\n" +
-                        "Importe: " + factura.getImporte());
+                System.out.println("\n");
+                System.out.print(factura.toString());
             }
         }
+        System.out.println("\n");
     }
 
     //------------------------------------------------------------------

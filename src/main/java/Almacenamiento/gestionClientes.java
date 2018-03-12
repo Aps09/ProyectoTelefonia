@@ -41,6 +41,7 @@ public class gestionClientes {
         Cliente cliente = this.almacen.getCliente(NIF);
         if(cliente != null)
             System.out.println(cliente.toString());
+        System.out.print("\n");
     }
 
     public void CambiarTarifa(){
@@ -57,10 +58,11 @@ public class gestionClientes {
     public void getDatosClientes(){
         // Recogemos la lista de clientes y escribimos sus respectivos nombres
         ArrayList<Cliente> clientes = this.almacen.getClientes();
-        System.out.println("");
         for(Cliente cliente : clientes){
-            System.out.print(cliente.getNombre()+ ", "+cliente.getNIF() + "\n");
+            System.out.println("\n");
+            System.out.print(cliente.toString());
         }
+        System.out.println("\n");
     }
 
     //------------------------------------------------------------------

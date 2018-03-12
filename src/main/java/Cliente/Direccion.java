@@ -39,4 +39,14 @@ public class Direccion {
     public String getPuerta() {
         return puerta;
     }
+
+    // -------------------------------------------------------------------------
+    // GETTERS
+    // -------------------------------------------------------------------------
+
+
+    @Override
+    public String toString() {
+        return calle + ", nº" + num + ", " + piso + "º"+ puerta + ", " + provincia;
+    }
 }

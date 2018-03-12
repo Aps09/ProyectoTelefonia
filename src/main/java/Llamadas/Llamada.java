@@ -1,11 +1,12 @@
 package Llamadas;
 
-import java.util.Date;
+import Fecha.Fecha;
+
 
 public class Llamada {
 
     private String numeroTelefono;
-    private Date fechaLlamada;
+    private Fecha fechaLlamada;
     private double duracion;
 
     //------------------------------------------------------------------
@@ -18,7 +19,7 @@ public class Llamada {
         this.duracion = -1;
     }
 
-    public Llamada(String numeroTelefono, Date fecha, double duracion){
+    public Llamada(String numeroTelefono, Fecha fecha, double duracion){
         this.numeroTelefono = numeroTelefono;
         this.fechaLlamada = fecha;
         this.duracion = duracion;
@@ -39,7 +40,7 @@ public class Llamada {
         return numeroTelefono;
     }
 
-    public Date getFechaLlamada() {
+    public Fecha getFechaLlamada() {
         return fechaLlamada;
     }
 
@@ -52,7 +53,7 @@ public class Llamada {
     // SETTERS
     //------------------------------------------------------------------
 
-    public void setFechaLlamada(Date fechaLlamada) {
+    public void setFechaLlamada(Fecha fechaLlamada) {
         this.fechaLlamada = fechaLlamada;
     }
 
@@ -62,5 +63,17 @@ public class Llamada {
 
     public void setNumeroTelefono(String numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
+    }
+
+    //------------------------------------------------------------------
+    // SETTERS
+    //------------------------------------------------------------------
+
+
+    @Override
+    public String toString() {
+        return  "Número de telefono = " + numeroTelefono + "\n" +
+                "Fecha de llamada = " + fechaLlamada.toString() + "\n" +
+                "Duracion = " + duracion;
     }
 }
