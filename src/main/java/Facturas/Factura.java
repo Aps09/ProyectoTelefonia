@@ -2,8 +2,9 @@ package Facturas;
 
 import Fecha.Fecha;
 import Tarifa.Tarifa;
+import Fecha.Fechable;
 
-public class Factura {
+public class Factura implements Fechable {
 
     private int codigo;
     private Tarifa tarifa;
@@ -44,7 +45,7 @@ public class Factura {
         return tarifa;
     }
 
-    public Fecha getFechaEmision() {
+    public Fecha getFecha() {
         return fechaEmision;
     }
 
@@ -68,7 +69,7 @@ public class Factura {
         this.tarifa = tarifa;
     }
 
-    public void setFechaEmision(Fecha fechaEmision) {
+    public void setFecha(Fecha fechaEmision) {
         this.fechaEmision = fechaEmision;
     }
 
@@ -88,7 +89,7 @@ public class Factura {
 
         String mensaje = "Código: "+this.codigo + "\n"+
                 "Tarifa: "+this.tarifa.getCantidad() + "€/min \n" +
-                "Fecha: "+ this.getFechaEmision().toString() + "\n" +
+                "Fecha: "+ this.getFecha().toString() + "\n" +
                 "Periodo: " + this.periodo.getInicio() + " - " + this.periodo.getFin() + "\n" +
                 "Importe: " + this.getImporte();
 

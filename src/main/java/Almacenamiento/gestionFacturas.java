@@ -45,7 +45,7 @@ public class gestionFacturas {
 
         // Crear factura
         Fecha fecha = datosFactura.getFechaEmision();
-        factura.setFechaEmision(fecha);
+        factura.setFecha(fecha);
         factura.setImporte(importe);
         factura.setPeriodo(periodo);
         factura.setTarifa(cliente.getTarifa());
@@ -62,7 +62,7 @@ public class gestionFacturas {
         // Vamos comparando las fechas de cada llamada y comprobamos que se encuentren en el rango proporcionado
         ArrayList<Llamada> validas = new ArrayList<Llamada>();
         for(Llamada llamada : llamadas) {
-            if (llamada.getFechaLlamada().compareTo(rango[0]) >= 0 && llamada.getFechaLlamada().compareTo(rango[1]) <= 0)
+            if (llamada.getFecha().compareTo(rango[0]) >= 0 && llamada.getFecha().compareTo(rango[1]) <= 0)
                 validas.add(llamada);
         }
 

@@ -1,9 +1,10 @@
 package Llamadas;
 
 import Fecha.Fecha;
+import Fecha.Fechable;
 
 
-public class Llamada {
+public class Llamada implements Fechable {
 
     private String numeroTelefono;
     private Fecha fechaLlamada;
@@ -40,7 +41,7 @@ public class Llamada {
         return numeroTelefono;
     }
 
-    public Fecha getFechaLlamada() {
+    public Fecha getFecha() {
         return fechaLlamada;
     }
 

@@ -64,7 +64,7 @@ public class datosCliente {
         int anyo = scan.nextInt();
 
         Fecha fecha = new Fecha(dia,mes,anyo);
-        cliente.setFecha_Alta(fecha);
+        cliente.setFecha(fecha);
 
         // Tarifa
         System.out.print("Indique la cantidad que paga con la tarifa actual: ");
@@ -114,4 +114,6 @@ public class datosCliente {
 
         return cant;
     }
+
+
 }

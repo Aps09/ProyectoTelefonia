@@ -2,8 +2,9 @@ package Cliente;
 
 import Fecha.Fecha;
 import Tarifa.Tarifa;
+import Fecha.Fechable;
 
-public class Cliente {
+public class Cliente implements Fechable {
 
     private String nombre;
     private String NIF;
@@ -68,7 +69,7 @@ public class Cliente {
     // SETTERS
     //------------------------------------------------------------------
 
-    public void setFecha_Alta(Fecha fecha_Alta) {
+    public void setFecha(Fecha fecha_Alta) {
         this.fecha_Alta = fecha_Alta;
     }
 

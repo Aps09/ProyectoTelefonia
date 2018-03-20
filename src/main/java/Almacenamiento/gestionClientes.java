@@ -65,6 +65,8 @@ public class gestionClientes {
         System.out.println("\n");
     }
 
+    public void getCli
+
     //------------------------------------------------------------------
     // GETTERS Y SETTERS
     //------------------------------------------------------------------

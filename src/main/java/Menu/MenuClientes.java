@@ -47,8 +47,12 @@ public class MenuClientes {
                     // Recoger datos de todos los clientes
                     gestion.getDatosClientes();
                     break;
+                case 6:
+                    // Recoger datos de clientes entre fechas
+
+                    break;
             }
-        }while (opc != 6);
+        }while (opc != 7);
 
         // Finalmente actualizamos el almacen de datos y lo devolvemos al menu principal para que esté actualizado
         almacen = gestion.getAlmacen();
