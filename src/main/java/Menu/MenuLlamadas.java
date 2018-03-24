@@ -32,8 +32,12 @@ public class MenuLlamadas {
                     // Listar llamadas
                     gestion.listarLlamadas();
                     break;
+                case 3:
+                    // Listar llamadas entre fechas
+                    gestion.ListarLlamadasEntreFechas();
+                    break;
             }
-        }while (opc != 3);
+        }while (opc != 4);
 
         almacen = gestion.getAlmacen();
         return almacen;

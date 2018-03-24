@@ -49,7 +49,7 @@ public class MenuClientes {
                     break;
                 case 6:
                     // Recoger datos de clientes entre fechas
-
+                    gestion.getClienteFechas();
                     break;
             }
         }while (opc != 7);

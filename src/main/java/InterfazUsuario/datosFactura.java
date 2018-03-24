@@ -13,7 +13,9 @@ public class datosFactura {
     // METODOS DE USO
     // ----------------------------------------------------------
 
+    // ----------------------------------------------------------------------------
     //METODOS DE EMITIR FACTURA
+    // ----------------------------------------------------------------------------
 
     public static String emitirFacturaNIF(){
         System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
@@ -75,7 +77,9 @@ public class datosFactura {
         return rango;
     }
 
-    //METODOS DE RECUPERAR FACTURA
+    // ----------------------------------------------------------------------------
+    //METODOS DE RECUPERAR UNA SOLA FACTURA
+    // ----------------------------------------------------------------------------
 
     public static int recuperarFacturaID(){
         System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
@@ -88,7 +92,9 @@ public class datosFactura {
         return id;
     }
 
-    //METODOS DE RECUPERAR FACTURAS
+    // ----------------------------------------------------------------------------
+    //METODOS DE RECUPERAR TODAS LAS FACTURAS
+    // ----------------------------------------------------------------------------
 
     public static String recuperarFacturaClienteNIF(){
         System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
@@ -99,5 +105,44 @@ public class datosFactura {
         String NIF = scan.next();
 
         return NIF;
+    }
+
+    // ----------------------------------------------------------------------------
+    // METODOS GENERALIZACION
+    // ----------------------------------------------------------------------------
+
+    public static String getNIFEntreFechas(){
+        System.out.println("MARQUE LOS ESPACIOS CON UN '_' ");
+
+        System.out.print("Indique el NIF del cliente del que quieres recuperar las facturas: ");
+        String NIF = scan.next();
+
+        return NIF;
+    }
+
+    public static Fecha getFechaInicial(){
+        System.out.print("Indique el día de la primera fecha del periodo que quieres saber las facturas del cliente: ");
+        int dia = scan.nextInt();
+
+        System.out.print("Indique el mes de la primera fecha del periodo que quieres saber las facturas del cliente: ");
+        int mes = scan.nextInt();
+
+        System.out.print("Indique el año de la primera fecha del periodo que quieres saber las facturas del cliente: ");
+        int anyo = scan.nextInt();
+
+        return new Fecha(dia,mes,anyo);
+    }
+
+    public static Fecha getFechaFinal(){
+        System.out.print("Indique el día de la primera fecha del periodo que quieres saber las facturas del cliente: ");
+        int dia = scan.nextInt();
+
+        System.out.print("Indique el mes de la primera fecha del periodo que quieres saber las facturas del cliente: ");
+        int mes = scan.nextInt();
+
+        System.out.print("Indique el año de la primera fecha del periodo que quieres saber las facturas del cliente: ");
+        int anyo = scan.nextInt();
+
+        return new Fecha(dia,mes,anyo);
     }
 }

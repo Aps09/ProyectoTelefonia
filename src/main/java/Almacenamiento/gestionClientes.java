@@ -1,6 +1,7 @@
 package Almacenamiento;
 
 import Cliente.Cliente;
+import Fecha.Fecha;
 import InterfazUsuario.datosCliente;
 import Tarifa.Tarifa;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 public class gestionClientes {
 
     private Almacen almacen;
+    private Fechador fechador;
 
     //------------------------------------------------------------------
     // CONSTRUCTORES
@@ -16,6 +18,7 @@ public class gestionClientes {
 
     public gestionClientes (Almacen almacen){
         this.almacen = almacen;
+        this.fechador = new Fechador();
     }
 
     //------------------------------------------------------------------
@@ -65,7 +68,19 @@ public class gestionClientes {
         System.out.println("\n");
     }
 
-    public void getCli
+    // METODO GENERALIZACION
+    public void getClienteFechas(){
+        ArrayList<Cliente> listaClientes = almacen.getClientes();
+        Fecha fechaIni = datosCliente.getFechaIni();
+        Fecha fechaFin = datosCliente.getFechaFin();
+        listaClientes = fechador.entreTiempos(listaClientes,fechaIni, fechaFin);
+
+        for(Cliente cliente : listaClientes){
+            System.out.println();
+            System.out.print(cliente.toString());
+            System.out.println();
+        }
+    }
 
     //------------------------------------------------------------------
     // GETTERS Y SETTERS

@@ -39,8 +39,12 @@ public class MenuFacturas {
                     // Recuperar facturas de un cliente
                     gestion.recuperarFacturasCliente();
                     break;
+                case 4:
+                    // Recuperar facturas emitidas entre dos fechas de un cliente
+                    gestion.recuperarFacturasEntreFechas();
+                    break;
             }
-        }while (opc != 4);
+        }while (opc != 5);
 
         // Finalmente actualizamos el almacen de datos y lo devolvemos al menu principal para que esté actualizado
         almacen = gestion.getAlmacen();

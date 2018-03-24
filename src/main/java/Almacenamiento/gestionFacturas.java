@@ -13,13 +13,14 @@ import java.util.ArrayList;
 public class gestionFacturas {
 
     private Almacen almacen;
-
+    private Fechador fechador;
     //------------------------------------------------------------------
     // CONSTRUCTORES
     //------------------------------------------------------------------
 
     public gestionFacturas (Almacen almacen){
         this.almacen = almacen;
+        this.fechador = new Fechador();
     }
 
     //------------------------------------------------------------------
@@ -93,6 +94,23 @@ public class gestionFacturas {
         System.out.println("\n");
     }
 
+    public void recuperarFacturasEntreFechas(){
+        // Recogemos el NIF del cliente en cuestión
+        String NIF = datosFactura.getNIFEntreFechas();
+
+        // Recogemos la lista de todas las facturas del cliente
+        ArrayList<Factura> listaFacturas = almacen.getFacturas(NIF);
+
+        // Con las dos fechas restringimos el conjunto a las que queremos y las enseñamos en pantalla
+        Fecha fechaIni = datosFactura.getFechaInicial();
+        Fecha fechaFin = datosFactura.getFechaFinal();
+        listaFacturas = fechador.entreTiempos(listaFacturas, fechaIni, fechaFin);
+        for(Factura factura : listaFacturas){
+            System.out.println(" ");
+            System.out.print(factura.toString());
+            System.out.println();
+        }
+    }
     //------------------------------------------------------------------
     // GETTERS Y SETTERS
     //------------------------------------------------------------------

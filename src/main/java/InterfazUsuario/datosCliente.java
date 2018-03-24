@@ -14,6 +14,10 @@ public class datosCliente {
     // METODOS DE USO
     // ----------------------------------------------------------
 
+    // ----------------------------------------------------------------------------
+    // METODOS AÑADIR CLIENTE
+    // ----------------------------------------------------------------------------
+
     public static Cliente addCliente(){
         Cliente cliente = new Cliente();
 
@@ -73,6 +77,10 @@ public class datosCliente {
         return cliente;
     }
 
+    // ----------------------------------------------------------------------------
+    // METODOS ELIMINAR CLIENTE
+    // ----------------------------------------------------------------------------
+
     public static String deleteCliente(){
         System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
         System.out.println(" ");
@@ -84,6 +92,10 @@ public class datosCliente {
         return NIF;
     }
 
+    // ----------------------------------------------------------------------------
+    // METODOS RECOGER DATOS CLIENTE
+    // ----------------------------------------------------------------------------
+
     public static String getDatos(){
         System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
         System.out.println(" ");
@@ -94,6 +106,10 @@ public class datosCliente {
 
         return NIF;
     }
+
+    // ----------------------------------------------------------------------------
+    // METODOS CAMBIAR TARIFA
+    // ----------------------------------------------------------------------------
 
     public static String getNIFTarifa(){
         System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
@@ -107,7 +123,6 @@ public class datosCliente {
     }
 
     public static int getCantTarifa(){
-
         // CANTIDAD
         System.out.print("Indique la cantidad con la que quiere actualizar la tarifa: ");
         int cant = scan.nextInt();
@@ -115,5 +130,33 @@ public class datosCliente {
         return cant;
     }
 
+    // ----------------------------------------------------------------------------
+    // METODOS ENTRE FECHAS
+    // ----------------------------------------------------------------------------
 
+    public static Fecha getFechaIni(){
+        System.out.print("Indique el día de la primera fecha del periodo que quieres saber los clientes registrados: ");
+        int dia = scan.nextInt();
+
+        System.out.print("Indique el mes de la primera fecha del periodo que quieres saber los clientes registrados: ");
+        int mes = scan.nextInt();
+
+        System.out.print("Indique el año de la primera fecha del periodo que quieres saber los clientes registrados: ");
+        int anyo = scan.nextInt();
+
+        return new Fecha(dia,mes,anyo);
+    }
+
+    public static Fecha getFechaFin(){
+        System.out.print("Indique el día de la segunda fecha del periodo que quieres saber los clientes registrados: ");
+        int dia = scan.nextInt();
+
+        System.out.print("Indique el mes de la segunda fecha del periodo que quieres saber los clientes registrados: ");
+        int mes = scan.nextInt();
+
+        System.out.print("Indique el año de la segunda fecha del periodo que quieres saber los clientes registrados: ");
+        int anyo = scan.nextInt();
+
+        return new Fecha(dia,mes,anyo);
+    }
 }
