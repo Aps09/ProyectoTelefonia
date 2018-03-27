@@ -7,20 +7,19 @@ import Fecha.Fecha;
 import InterfazUsuario.datosFactura;
 import Llamadas.Llamada;
 
-import java.awt.peer.SystemTrayPeer;
 import java.util.ArrayList;
 
 public class gestionFacturas {
 
     private Almacen almacen;
-    private Fechador fechador;
+    private Fechador<Factura> fechador;
     //------------------------------------------------------------------
     // CONSTRUCTORES
     //------------------------------------------------------------------
 
     public gestionFacturas (Almacen almacen){
         this.almacen = almacen;
-        this.fechador = new Fechador();
+        this.fechador = new Fechador<Factura>();
     }
 
     //------------------------------------------------------------------
@@ -56,7 +55,7 @@ public class gestionFacturas {
         almacen.emitirFactura(NIF,factura);
     }
 
-    public ArrayList<Llamada> encontrarLlamadas (String NIF, Fecha[] rango){
+    private ArrayList<Llamada> encontrarLlamadas(String NIF, Fecha[] rango){
         // Recogemos las llamadas del cliente en cuestión
         ArrayList<Llamada> llamadas = almacen.getLlamadas(NIF);
 
@@ -105,10 +104,11 @@ public class gestionFacturas {
         Fecha fechaIni = datosFactura.getFechaInicial();
         Fecha fechaFin = datosFactura.getFechaFinal();
         listaFacturas = fechador.entreTiempos(listaFacturas, fechaIni, fechaFin);
+
         for(Factura factura : listaFacturas){
             System.out.println(" ");
             System.out.print(factura.toString());
-            System.out.println();
+            System.out.println(" ");
         }
     }
     //------------------------------------------------------------------

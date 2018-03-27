@@ -2,7 +2,7 @@ package Tarifa;
 
 public class Tarifa {
 
-    private int cantidad;
+    private double cantidad;
 
     //------------------------------------------------------------------
     // CONSTRUCTORES
@@ -12,7 +12,7 @@ public class Tarifa {
         this.cantidad = 0;
     }
 
-    public Tarifa(int cantidad){
+    public Tarifa(double cantidad){
         this.cantidad = cantidad;
     }
 
@@ -28,7 +28,7 @@ public class Tarifa {
     // GETTERS
     //------------------------------------------------------------------
 
-    public int getCantidad() {
+    public double getCantidad() {
         return cantidad;
     }
 
@@ -37,7 +37,5 @@ public class Tarifa {
     // SETTERS
     //------------------------------------------------------------------
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
+
 }

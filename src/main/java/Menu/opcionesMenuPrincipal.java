@@ -1,20 +1,14 @@
 package Menu;
 
 public enum opcionesMenuPrincipal {
-    Menu_Clientes("Menú clientes"),
-    Menu_Llamadas("Menú llamadas"),
-    Menu_Facturas("Menú facturas"),
-    Salir("salir");
+    Menu_Clientes("Menu de clientes"),
+    Menu_Llamadas("Menu de llamadas"),
+    Menu_Facturas("Menu de facturas"),
+    Salir("Salir");
 
     private String description;
 
-    opcionesMenuPrincipal()
-    {
-        this.description = this.name();
-    }
-
-    opcionesMenuPrincipal(String name)
-    {
+    opcionesMenuPrincipal(String description) {
         this.description = description;
     }
 

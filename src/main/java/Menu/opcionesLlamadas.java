@@ -2,20 +2,14 @@ package Menu;
 
 public enum opcionesLlamadas {
 
-    Añadir_Llamada("Añadir una llamada"),
+    Anyadir_Llamada("Añadir una llamada"),
     Listar_Llamadas("Listar llamadas de un cliente"),
     Listar_Llamadas_Entre_Fechas("Listar las llamadas de un cliente realizadas entre fechas"),
-    Atrás("Ir al menú anterior");
+    Atras("Ir al menú anterior");
 
     private String description;
 
-    opcionesLlamadas()
-    {
-        this.description = this.name();
-    }
-
-    opcionesLlamadas(String name)
-    {
+    opcionesLlamadas(String description) {
         this.description = description;
     }
 

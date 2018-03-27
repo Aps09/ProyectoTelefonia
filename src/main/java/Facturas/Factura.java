@@ -24,15 +24,6 @@ public class Factura implements Fechable {
         this.importe = -1;
     }
 
-    public Factura(int codigo, Tarifa tarifa, Fecha fechaEmision, Periodo periodo, int importe){
-        this.codigo = codigo;
-        this.tarifa = tarifa;
-        this.fechaEmision = fechaEmision;
-        this.periodo = periodo;
-        this.importe = importe;
-    }
-
-
     //------------------------------------------------------------------
     // GETTERS
     //------------------------------------------------------------------
@@ -41,19 +32,11 @@ public class Factura implements Fechable {
         return codigo;
     }
 
-    public Tarifa getTarifa() {
-        return tarifa;
-    }
-
     public Fecha getFecha() {
         return fechaEmision;
     }
 
-    public Periodo getPeriodo() {
-        return periodo;
-    }
-
-    public double getImporte() {
+    private double getImporte() {
         return importe;
     }
 
@@ -87,12 +70,10 @@ public class Factura implements Fechable {
 
     public String toString() {
 
-        String mensaje = "Código: "+this.codigo + "\n"+
-                "Tarifa: "+this.tarifa.getCantidad() + "€/min \n" +
+        return "Código: "+ this.codigo + "\n"+
+                "Tarifa: "+ this.tarifa.getCantidad() + "€/min \n" +
                 "Fecha: "+ this.getFecha().toString() + "\n" +
                 "Periodo: " + this.periodo.getInicio() + " - " + this.periodo.getFin() + "\n" +
                 "Importe: " + this.getImporte();
-
-        return mensaje;
     }
 }

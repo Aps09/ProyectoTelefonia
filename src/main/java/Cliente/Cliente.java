@@ -26,16 +26,6 @@ public class Cliente implements Fechable {
         this.tarifa = new Tarifa();
     }
 
-    public Cliente(String nombre, String NIF, Direccion direccion, Fecha fecha, String correo, Tarifa tarifa){
-        this.nombre = nombre;
-        this.NIF = NIF;
-        this.direccion = direccion;
-        this.correo = correo;
-        this.fecha_Alta = fecha;
-        this.tarifa = tarifa;
-    }
-
-
     //------------------------------------------------------------------
     // GETTERS
     //------------------------------------------------------------------
@@ -46,18 +36,6 @@ public class Cliente implements Fechable {
 
     public String getNIF(){
         return this.NIF;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public Direccion getDireccion() {
-        return direccion;
-    }
-
-    public String getCorreo() {
-        return correo;
     }
 
     public Tarifa getTarifa() {

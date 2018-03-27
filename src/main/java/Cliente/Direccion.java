@@ -2,11 +2,11 @@ package Cliente;
 
 public class Direccion {
 
-    String provincia;
-    String calle;
-    int num;
-    int piso;
-    String puerta;
+    private String provincia;
+    private String calle;
+    private int num;
+    private int piso;
+    private String puerta;
 
     // -----------------------------------------------
     // CONSTRUCTORES
@@ -24,21 +24,7 @@ public class Direccion {
     // GETTERS
     // -------------------------------------------------------------------------
 
-    public String getCalle() {
-        return calle;
-    }
 
-    public int getNum() {
-        return num;
-    }
-
-    public int getPiso() {
-        return piso;
-    }
-
-    public String getPuerta() {
-        return puerta;
-    }
 
     // -------------------------------------------------------------------------
     // GETTERS

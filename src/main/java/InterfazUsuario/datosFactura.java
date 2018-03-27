@@ -18,29 +18,25 @@ public class datosFactura {
     // ----------------------------------------------------------------------------
 
     public static String emitirFacturaNIF(){
-        System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
         System.out.println(" ");
 
         // NIF
         System.out.print("Indique el NIF del cliente que desea generar una factura: ");
-        String NIF = scan.next();
-
-        return NIF;
+        return scan.nextLine();
     }
 
     public static Fecha getFechaEmision(){
 
         System.out.print("Indique el día de emisión de la factura: ");
-        int dia = scan.nextInt();
+        int dia = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el mes de emisión de la factura: ");
-        int mes = scan.nextInt();
+        int mes = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el año de emisión de la factura: ");
-        int anyo = scan.nextInt();
+        int anyo = Integer.parseInt(scan.nextLine());
 
-        Fecha fecha = new Fecha(dia,mes,anyo);
-        return fecha;
+        return new Fecha(dia,mes,anyo);
     }
 
     public static Fecha[] pedirFechas(){
@@ -48,22 +44,22 @@ public class datosFactura {
         Fecha fin;
 
         System.out.print("Indique el día de la primera fecha: ");
-        int dia = scan.nextInt();
+        int dia = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el mes de la primera fecha: ");
-        int mes = scan.nextInt();
+        int mes = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el año de la primera fecha: ");
-        int anyo = scan.nextInt();
+        int anyo = Integer.parseInt(scan.nextLine());
 
         inicio = new Fecha(dia,mes,anyo);
 
         // --------------------------------------------
         System.out.print("Indique el día de la segunda fecha: ");
-        dia = scan.nextInt();
+        dia = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el mes de la segunda fecha: ");
-        mes = scan.nextInt();
+        mes = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el año de la segunda fecha: ");
         anyo = scan.nextInt();
@@ -82,14 +78,12 @@ public class datosFactura {
     // ----------------------------------------------------------------------------
 
     public static int recuperarFacturaID(){
-        System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
+
         System.out.println(" ");
 
         // Código
         System.out.print("Indique el código de la factura que desea visualizar: ");
-        int id = scan.nextInt();
-
-        return id;
+        return Integer.parseInt(scan.nextLine());
     }
 
     // ----------------------------------------------------------------------------
@@ -97,14 +91,12 @@ public class datosFactura {
     // ----------------------------------------------------------------------------
 
     public static String recuperarFacturaClienteNIF(){
-        System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
+
         System.out.println(" ");
 
         // NIF
         System.out.print("Indique el NIF del cliente que desea ver sus facturas emitidas: ");
-        String NIF = scan.next();
-
-        return NIF;
+        return scan.nextLine();
     }
 
     // ----------------------------------------------------------------------------
@@ -112,36 +104,33 @@ public class datosFactura {
     // ----------------------------------------------------------------------------
 
     public static String getNIFEntreFechas(){
-        System.out.println("MARQUE LOS ESPACIOS CON UN '_' ");
 
         System.out.print("Indique el NIF del cliente del que quieres recuperar las facturas: ");
-        String NIF = scan.next();
-
-        return NIF;
+        return scan.nextLine();
     }
 
     public static Fecha getFechaInicial(){
         System.out.print("Indique el día de la primera fecha del periodo que quieres saber las facturas del cliente: ");
-        int dia = scan.nextInt();
+        int dia = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el mes de la primera fecha del periodo que quieres saber las facturas del cliente: ");
-        int mes = scan.nextInt();
+        int mes = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el año de la primera fecha del periodo que quieres saber las facturas del cliente: ");
-        int anyo = scan.nextInt();
+        int anyo = Integer.parseInt(scan.nextLine());
 
         return new Fecha(dia,mes,anyo);
     }
 
     public static Fecha getFechaFinal(){
         System.out.print("Indique el día de la primera fecha del periodo que quieres saber las facturas del cliente: ");
-        int dia = scan.nextInt();
+        int dia = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el mes de la primera fecha del periodo que quieres saber las facturas del cliente: ");
-        int mes = scan.nextInt();
+        int mes = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el año de la primera fecha del periodo que quieres saber las facturas del cliente: ");
-        int anyo = scan.nextInt();
+        int anyo = Integer.parseInt(scan.nextLine());
 
         return new Fecha(dia,mes,anyo);
     }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class gestionLlamadas {
 
     private Almacen almacen;
-    private Fechador fechador;
+    private Fechador<Llamada> fechador;
 
     //------------------------------------------------------------------
     // CONSTRUCTORES
@@ -17,7 +17,7 @@ public class gestionLlamadas {
 
     public gestionLlamadas (Almacen almacen){
         this.almacen = almacen;
-        this.fechador = new Fechador();
+        this.fechador = new Fechador<Llamada>();
     }
 
     //------------------------------------------------------------------

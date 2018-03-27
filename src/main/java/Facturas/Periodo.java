@@ -4,14 +4,14 @@ import Fecha.Fecha;
 
 
 public class Periodo {
-    Fecha inicio;
-    Fecha fin;
+    private Fecha inicio;
+    private Fecha fin;
 
     // -----------------------------------------------
     // CONSTRUCTORES
     // -----------------------------------------------
 
-    public Periodo() {
+    Periodo() {
         this.inicio = null;
         this.fin = null;
     }

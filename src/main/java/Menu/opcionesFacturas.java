@@ -6,17 +6,11 @@ public enum opcionesFacturas {
     Recoger_Factura("Recoger la información de una factura"),
     Recoger_Facturas_Cliente("Recoger todas las facturas de un cliente"),
     Recoger_Facturas_Emitidas_Entre_Fechas("Recoger todas las facturas emitidas entre dos fechas de un cliente"),
-    Atrás("Ir al menú anterior");
+    Atras("Ir al menú anterior");
 
     private String description;
 
-    opcionesFacturas()
-    {
-        this.description = this.name();
-    }
-
-    opcionesFacturas(String name)
-    {
+    opcionesFacturas(String description) {
         this.description = description;
     }
 

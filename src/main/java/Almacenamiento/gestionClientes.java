@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class gestionClientes {
 
     private Almacen almacen;
-    private Fechador fechador;
+    private Fechador<Cliente> fechador;
 
     //------------------------------------------------------------------
     // CONSTRUCTORES
@@ -18,7 +18,7 @@ public class gestionClientes {
 
     public gestionClientes (Almacen almacen){
         this.almacen = almacen;
-        this.fechador = new Fechador();
+        this.fechador = new Fechador<Cliente>();
     }
 
     //------------------------------------------------------------------
@@ -50,7 +50,7 @@ public class gestionClientes {
     public void CambiarTarifa(){
         // Llamamos a la interfaz para que saque el NIF del cliente y la nueva cantidad
         String NIF = datosCliente.getNIFTarifa();
-        int cant = datosCliente.getCantTarifa();
+        double cant = datosCliente.getCantTarifa();
         Tarifa tarifa = new Tarifa(cant);
         // Recogemos al cliente y le cambiamos la tarifa
         Cliente cliente = this.almacen.getCliente(NIF);

@@ -20,12 +20,6 @@ public class Llamada implements Fechable {
         this.duracion = -1;
     }
 
-    public Llamada(String numeroTelefono, Fecha fecha, double duracion){
-        this.numeroTelefono = numeroTelefono;
-        this.fechaLlamada = fecha;
-        this.duracion = duracion;
-    }
-
 
     //------------------------------------------------------------------
     // METODOS DE USO
@@ -36,10 +30,6 @@ public class Llamada implements Fechable {
     //------------------------------------------------------------------
     // GETTERS
     //------------------------------------------------------------------
-
-    public String getNumeroTelefono() {
-        return numeroTelefono;
-    }
 
     public Fecha getFecha() {
         return fechaLlamada;

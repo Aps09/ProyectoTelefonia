@@ -21,58 +21,58 @@ public class datosCliente {
     public static Cliente addCliente(){
         Cliente cliente = new Cliente();
 
-        System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
         System.out.println(" ");
 
         // Nombre
         System.out.print("Indique el nombre del cliente: ");
-        cliente.setNombre(scan.next());
+        cliente.setNombre(scan.nextLine());
 
         // NIF
         System.out.print("Indique el NIF del cliente: ");
-        cliente.setNIF(scan.next());
+        cliente.setNIF(scan.nextLine());
 
         // Direccion
         Direccion dir;
 
         System.out.print("Indique la provincia en la que habita el cliente: ");
-        String provincia = scan.next();
+        String provincia = scan.nextLine();
 
         System.out.print("Indique la calle donde vive el cliente: ");
-        String calle = scan.next();
+        String calle = scan.nextLine();
 
         System.out.print("Indique el número del portal del cliente: ");
-        int num = scan.nextInt();
+        int num = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el piso donde vive el cliente: ");
-        int piso = scan.nextInt();
+        int piso = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique la puerta donde vive el cliente: ");
-        String puerta = scan.next();
+        String puerta = scan.nextLine();
 
         dir = new Direccion(provincia,calle,num,piso,puerta);
         cliente.setDireccion(dir);
 
         // Correo
         System.out.print("Indique el correo del cliente: ");
-        cliente.setCorreo(scan.next());
+        cliente.setCorreo(scan.nextLine());
 
         // Fecha de alta
         System.out.print("Indique el día de registro: ");
-        int dia = scan.nextInt();
+        int dia = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el mes de registro: ");
-        int mes = scan.nextInt();
+        int mes = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el año de registro: ");
-        int anyo = scan.nextInt();
+        int anyo = Integer.parseInt(scan.nextLine());
 
         Fecha fecha = new Fecha(dia,mes,anyo);
         cliente.setFecha(fecha);
 
         // Tarifa
         System.out.print("Indique la cantidad que paga con la tarifa actual: ");
-        cliente.setTarifa(new Tarifa(scan.nextInt()));
+        double tarifa = Double.parseDouble(scan.nextLine());
+        cliente.setTarifa(new Tarifa(tarifa));
 
         return cliente;
     }
@@ -82,14 +82,11 @@ public class datosCliente {
     // ----------------------------------------------------------------------------
 
     public static String deleteCliente(){
-        System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
         System.out.println(" ");
 
         // NIF
         System.out.print("Indique el NIF del cliente que quiere borrar: ");
-        String NIF = scan.next();
-
-        return NIF;
+        return scan.nextLine();
     }
 
     // ----------------------------------------------------------------------------
@@ -97,14 +94,12 @@ public class datosCliente {
     // ----------------------------------------------------------------------------
 
     public static String getDatos(){
-        System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
+
         System.out.println(" ");
 
         // NIF
         System.out.print("Indique el NIF del cliente que quieras recoger los datos: ");
-        String NIF = scan.next();
-
-        return NIF;
+        return scan.nextLine();
     }
 
     // ----------------------------------------------------------------------------
@@ -112,22 +107,18 @@ public class datosCliente {
     // ----------------------------------------------------------------------------
 
     public static String getNIFTarifa(){
-        System.out.println("MARQUE LOS ESPACIOS CON UN '_'");
         System.out.println(" ");
 
         // NIF
         System.out.print("Indique el NIF del cliente que quiera cambiar la tarifa: ");
-        String NIF = scan.next();
-
-        return NIF;
+        return scan.nextLine();
     }
 
-    public static int getCantTarifa(){
+    public static double getCantTarifa(){
+
         // CANTIDAD
         System.out.print("Indique la cantidad con la que quiere actualizar la tarifa: ");
-        int cant = scan.nextInt();
-
-        return cant;
+        return Double.parseDouble(scan.nextLine());
     }
 
     // ----------------------------------------------------------------------------
@@ -135,27 +126,28 @@ public class datosCliente {
     // ----------------------------------------------------------------------------
 
     public static Fecha getFechaIni(){
+
         System.out.print("Indique el día de la primera fecha del periodo que quieres saber los clientes registrados: ");
-        int dia = scan.nextInt();
+        int dia = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el mes de la primera fecha del periodo que quieres saber los clientes registrados: ");
-        int mes = scan.nextInt();
+        int mes = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el año de la primera fecha del periodo que quieres saber los clientes registrados: ");
-        int anyo = scan.nextInt();
+        int anyo = Integer.parseInt(scan.nextLine());
 
         return new Fecha(dia,mes,anyo);
     }
 
     public static Fecha getFechaFin(){
         System.out.print("Indique el día de la segunda fecha del periodo que quieres saber los clientes registrados: ");
-        int dia = scan.nextInt();
+        int dia = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el mes de la segunda fecha del periodo que quieres saber los clientes registrados: ");
-        int mes = scan.nextInt();
+        int mes = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el año de la segunda fecha del periodo que quieres saber los clientes registrados: ");
-        int anyo = scan.nextInt();
+        int anyo = Integer.parseInt(scan.nextLine());
 
         return new Fecha(dia,mes,anyo);
     }
