@@ -1,6 +1,8 @@
 package Fecha;
+import java.io.Serializable;
 
-public class Fecha implements Comparable<Fecha> {
+
+public class Fecha implements Comparable<Fecha>, Serializable {
 
     private int dia;
     private int mes;

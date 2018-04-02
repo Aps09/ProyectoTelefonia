@@ -1,6 +1,7 @@
 package Cliente;
+import java.io.Serializable;
 
-public class Direccion {
+public class Direccion implements Serializable {
 
     private String provincia;
     private String calle;

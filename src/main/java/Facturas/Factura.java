@@ -3,8 +3,8 @@ package Facturas;
 import Fecha.Fecha;
 import Tarifa.Tarifa;
 import Fecha.Fechable;
-
-public class Factura implements Fechable {
+import java.io.Serializable;
+public class Factura implements Fechable, Serializable {
 
     private int codigo;
     private Tarifa tarifa;

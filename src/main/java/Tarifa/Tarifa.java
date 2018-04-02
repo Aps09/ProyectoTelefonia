@@ -1,6 +1,7 @@
 package Tarifa;
+import java.io.Serializable;
 
-public class Tarifa {
+public class Tarifa implements Serializable {
 
     private double cantidad;
 

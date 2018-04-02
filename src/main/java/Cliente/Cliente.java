@@ -3,8 +3,9 @@ package Cliente;
 import Fecha.Fecha;
 import Tarifa.Tarifa;
 import Fecha.Fechable;
+import java.io.Serializable;
 
-public class Cliente implements Fechable {
+public class Cliente implements Fechable, Serializable {
 
     private String nombre;
     private String NIF;

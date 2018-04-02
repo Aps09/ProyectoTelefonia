@@ -4,10 +4,11 @@ import Cliente.Cliente;
 import Facturas.Factura;
 import Llamadas.Llamada;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Almacen {
+public class Almacen implements Serializable {
 
     private static int numCodigo = 0;
 

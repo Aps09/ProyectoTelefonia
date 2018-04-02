@@ -2,9 +2,9 @@ package Llamadas;
 
 import Fecha.Fecha;
 import Fecha.Fechable;
+import java.io.Serializable;
 
-
-public class Llamada implements Fechable {
+public class Llamada implements Fechable, Serializable{
 
     private String numeroTelefono;
     private Fecha fechaLlamada;
