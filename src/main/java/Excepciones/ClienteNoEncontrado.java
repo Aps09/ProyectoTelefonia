@@ -1,9 +1,11 @@
 package Excepciones;
 
-public class ClienteNoEncontrado {
-    // Excepción que hace referencia a no haber encontrado un cliente en el almacén
+// Excepción que hace referencia a no haber encontrado un cliente en el almacén
 
+class ClienteNoEncontradoException extends Exception {
 
-
+    public ClienteNoEncontradoException(String msg){
+        super(msg);
+    }
 
 }

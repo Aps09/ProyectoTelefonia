@@ -19,7 +19,7 @@ public class MenuPrincipal {
         gestionIOs gestion = new gestionIOs(almacen, fichero);
         Almacen almacenCargado = gestion.CargadoDeDatos();
         almacen = almacenCargado;
-        
+
         opcionesMenuPrincipal[] menu = values();
         int opc;
         Scanner scan = new Scanner(System.in);

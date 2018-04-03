@@ -1,9 +1,10 @@
 package Excepciones;
 
-public class DuracionNoValida {
-    // Excepción para llamadas con duración igual o menor a 0
+// Excepción para llamadas con duración igual o menor a 0
+class DuracionNoValidaException extends Exception {
 
-
-
+    public DuracionNoValidaException(String msg) {
+        super(msg);
+    }
 
 }
