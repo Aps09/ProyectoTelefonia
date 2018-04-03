@@ -12,8 +12,14 @@ public class MenuPrincipal {
 
 
         Almacen almacen;
-        
         almacen = new Almacen();
+
+        // Cargado inmediato
+        String fichero = "Serializable.ficheroData";
+        gestionIOs gestion = new gestionIOs(almacen, fichero);
+        Almacen almacenCargado = gestion.CargadoDeDatos();
+        almacen = almacenCargado;
+        
         opcionesMenuPrincipal[] menu = values();
         int opc;
         Scanner scan = new Scanner(System.in);
@@ -48,6 +54,10 @@ public class MenuPrincipal {
             }
 
         }while (opc != 5);
+
+        // Guardado inmediato
+        gestion.GuardadoDeDatos();
+
 
     }
 

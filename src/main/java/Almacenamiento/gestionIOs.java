@@ -24,9 +24,10 @@ public class gestionIOs {
     //------------------------------------------------------------------
 
 
-    public void CargadoDeDatos(){
+    public Almacen CargadoDeDatos(){
         LectorAlmacen lectura = new LectorAlmacen();
         almacen = lectura.lee(fichero);
+        return almacen;
     }
 
     public void GuardadoDeDatos(){

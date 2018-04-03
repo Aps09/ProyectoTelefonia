@@ -27,7 +27,8 @@ public class MenuIOs {
             switch(opc){
                 case 1:
                     // Forzar Cargado
-                    gestion.CargadoDeDatos();
+                    Almacen almacenCargado = gestion.CargadoDeDatos();
+                    almacen = almacenCargado;
                     break;
                 case 2:
                     // Forzar Guardado
