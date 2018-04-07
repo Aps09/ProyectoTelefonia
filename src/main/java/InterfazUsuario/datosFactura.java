@@ -22,11 +22,14 @@ public class datosFactura {
 
         // NIF
         System.out.print("Indique el NIF del cliente que desea generar una factura: ");
-        return scan.nextLine();
+        String nif = scan.nextLine();
+
+        if(nif.length() != 9)
+            throw new IllegalArgumentException("El NIF indicado es incorrecto, debe contener 7 cifras y 1 carácter identificatorio.");
+        return nif;
     }
 
     public static Fecha getFechaEmision(){
-
         System.out.print("Indique el día de emisión de la factura: ");
         int dia = Integer.parseInt(scan.nextLine());
 
@@ -66,6 +69,8 @@ public class datosFactura {
 
         fin = new Fecha(dia,mes,anyo);
 
+        // Comprobamos que las fechas están correctas
+        if(inicio.compareTo(fin)>0) throw new IllegalArgumentException("La fecha inicial es posterior a la final.");
 
         Fecha[] rango = new Fecha[2];
         rango[0] = inicio;
@@ -96,7 +101,11 @@ public class datosFactura {
 
         // NIF
         System.out.print("Indique el NIF del cliente que desea ver sus facturas emitidas: ");
-        return scan.nextLine();
+        String nif = scan.nextLine();
+
+        if(nif.length() != 9)
+            throw new IllegalArgumentException("El NIF indicado es incorrecto, debe contener 7 cifras y 1 carácter identificatorio.");
+        return nif;
     }
 
     // ----------------------------------------------------------------------------
@@ -106,7 +115,11 @@ public class datosFactura {
     public static String getNIFEntreFechas(){
 
         System.out.print("Indique el NIF del cliente del que quieres recuperar las facturas: ");
-        return scan.nextLine();
+        String nif = scan.nextLine();
+
+        if(nif.length() != 9)
+            throw new IllegalArgumentException("El NIF indicado es incorrecto, debe contener 7 cifras y 1 carácter identificatorio.");
+        return nif;
     }
 
     public static Fecha getFechaInicial(){

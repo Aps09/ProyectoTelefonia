@@ -2,12 +2,13 @@ package Menu;
 
 import Almacenamiento.Almacen;
 import Almacenamiento.gestionClientes;
+import Excepciones.NoEncontrado;
 
 import java.util.Scanner;
 
 public class MenuClientes {
 
-    public static Almacen main (Almacen almacen){
+    public static Almacen main (Almacen almacen) throws NoEncontrado {
         // Creamos la herramienta que nos ayudará a gestionar los clientes
         gestionClientes gestion = new gestionClientes(almacen);
 
@@ -25,6 +26,8 @@ public class MenuClientes {
 
             System.out.print("Elija una opción: ");
             opc = scan.nextInt();
+
+            if(opc > 7 || opc <= 0) throw new IllegalArgumentException("La opción seleccionada no corresponde con ningún menú.");
 
             switch(opc){
                 case 1:

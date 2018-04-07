@@ -18,7 +18,7 @@ public class datosCliente {
     // METODOS AÑADIR CLIENTE
     // ----------------------------------------------------------------------------
 
-    public static Cliente addCliente(){
+    public static Cliente addCliente() throws IllegalArgumentException{
         Cliente cliente = new Cliente();
 
         System.out.println(" ");
@@ -29,7 +29,13 @@ public class datosCliente {
 
         // NIF
         System.out.print("Indique el NIF del cliente: ");
-        cliente.setNIF(scan.nextLine());
+        String nif = scan.nextLine();
+
+        // Comprobamos que el NIF sea correcto
+        if(nif.length() != 9)
+            throw new IllegalArgumentException("El NIF indicado es incorrecto, debe contener 7 cifras y 1 carácter identificatorio.");
+
+        cliente.setNIF(nif);
 
         // Direccion
         Direccion dir;
@@ -86,7 +92,11 @@ public class datosCliente {
 
         // NIF
         System.out.print("Indique el NIF del cliente que quiere borrar: ");
-        return scan.nextLine();
+        String nif = scan.nextLine();
+
+        if(nif.length() != 9)
+            throw new IllegalArgumentException("El NIF indicado es incorrecto, debe contener 7 cifras y 1 carácter identificatorio.");
+        return nif;
     }
 
     // ----------------------------------------------------------------------------
@@ -99,7 +109,11 @@ public class datosCliente {
 
         // NIF
         System.out.print("Indique el NIF del cliente que quieras recoger los datos: ");
-        return scan.nextLine();
+        String nif = scan.nextLine();
+
+        if(nif.length() != 9)
+            throw new IllegalArgumentException("El NIF indicado es incorrecto, debe contener 7 cifras y 1 carácter identificatorio.");
+        return nif;
     }
 
     // ----------------------------------------------------------------------------
@@ -111,7 +125,11 @@ public class datosCliente {
 
         // NIF
         System.out.print("Indique el NIF del cliente que quiera cambiar la tarifa: ");
-        return scan.nextLine();
+        String nif = scan.nextLine();
+
+        if(nif.length() != 9)
+            throw new IllegalArgumentException("El NIF indicado es incorrecto, debe contener 8 cifras y 1 carácter identificatorio.");
+        return nif;
     }
 
     public static double getCantTarifa(){

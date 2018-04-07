@@ -1,6 +1,7 @@
 package Almacenamiento;
 
 import Cliente.Cliente;
+import Excepciones.NoEncontrado;
 import Facturas.Factura;
 import Facturas.Periodo;
 import Fecha.Fecha;
@@ -26,7 +27,7 @@ public class gestionFacturas {
     // METODOS DE USO
     //------------------------------------------------------------------
 
-    public void emitirFactura(){
+    public void emitirFactura() throws NoEncontrado {
         // Creamos todas las variables que nos ayudara a crear y organizar la factura
         Factura factura = new Factura();
         String NIF = datosFactura.emitirFacturaNIF();
@@ -55,7 +56,7 @@ public class gestionFacturas {
         almacen.emitirFactura(NIF,factura);
     }
 
-    private ArrayList<Llamada> encontrarLlamadas(String NIF, Fecha[] rango){
+    private ArrayList<Llamada> encontrarLlamadas(String NIF, Fecha[] rango) throws NoEncontrado {
         // Recogemos las llamadas del cliente en cuestión
         ArrayList<Llamada> llamadas = almacen.getLlamadas(NIF);
 
@@ -70,7 +71,7 @@ public class gestionFacturas {
         return validas;
     }
 
-    public void recuperarFactura(){
+    public void recuperarFactura() throws NoEncontrado {
         // Mediante el id de la factura recuperamos la factura y la ponemos en pantalla
         int id = datosFactura.recuperarFacturaID();
         Factura factura = almacen.getFactura(id);
@@ -80,7 +81,7 @@ public class gestionFacturas {
         System.out.println("\n");
     }
 
-    public void recuperarFacturasCliente(){
+    public void recuperarFacturasCliente() throws NoEncontrado {
         // Con el NIF del cliente buscamos sus facturas y las imprimimos por pantalla
         String NIF = datosFactura.recuperarFacturaClienteNIF();
         ArrayList<Factura> facturas = almacen.getFacturas(NIF);
@@ -93,7 +94,7 @@ public class gestionFacturas {
         System.out.println("\n");
     }
 
-    public void recuperarFacturasEntreFechas(){
+    public void recuperarFacturasEntreFechas() throws NoEncontrado {
         // Recogemos el NIF del cliente en cuestión
         String NIF = datosFactura.getNIFEntreFechas();
 
@@ -103,6 +104,8 @@ public class gestionFacturas {
         // Con las dos fechas restringimos el conjunto a las que queremos y las enseñamos en pantalla
         Fecha fechaIni = datosFactura.getFechaInicial();
         Fecha fechaFin = datosFactura.getFechaFinal();
+
+        if(fechaIni.compareTo(fechaFin)>0) throw new IllegalArgumentException("La fecha inicial es posterior a la final.");
         listaFacturas = fechador.entreTiempos(listaFacturas, fechaIni, fechaFin);
 
         for(Factura factura : listaFacturas){

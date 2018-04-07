@@ -1,5 +1,6 @@
 package Almacenamiento;
 
+import Excepciones.NoEncontrado;
 import Fecha.Fecha;
 import InterfazUsuario.datosLlamada;
 import Llamadas.Llamada;
@@ -24,14 +25,14 @@ public class gestionLlamadas {
     // METODOS DE USO
     //------------------------------------------------------------------
 
-    public void addLlamada(){
+    public void addLlamada() throws NoEncontrado {
         // Recogemos el NIF del usuario y creamos la llamada y la pasamos al almacen
         String NIF = datosLlamada.addLlamadaNIF();
         Llamada llamada = datosLlamada.addLlamada();
         this.almacen.addLlamada(NIF,llamada);
     }
 
-    public void listarLlamadas(){
+    public void listarLlamadas() throws NoEncontrado {
         // Recogemos el NIF del cliente y mostramos las llamadas
         String NIF = datosLlamada.listarLlamadas();
         ArrayList<Llamada> llamadas = this.almacen.getLlamadas(NIF);
@@ -41,10 +42,12 @@ public class gestionLlamadas {
         }
     }
 
-    public void ListarLlamadasEntreFechas(){
+    public void ListarLlamadasEntreFechas() throws NoEncontrado {
         String NIF = datosLlamada.getNIFEntreFechas();
         Fecha fechaIni = datosLlamada.getFechaIni();
         Fecha fechaFin = datosLlamada.getFechaFin();
+
+        if(fechaIni.compareTo(fechaFin)>0) throw new IllegalArgumentException("La fecha inicial es posterior a la final.");
 
         ArrayList<Llamada> listaLlamadas = almacen.getLlamadas(NIF);
         listaLlamadas = fechador.entreTiempos(listaLlamadas, fechaIni, fechaFin);

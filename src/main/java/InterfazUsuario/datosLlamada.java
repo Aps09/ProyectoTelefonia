@@ -24,7 +24,11 @@ public class datosLlamada {
 
         // NIF cliente
         System.out.print("Indique el NIF del cliente que realizó la llamada: ");
-        return scan.nextLine();
+        String nif = scan.nextLine();
+
+        if(nif.length() != 9)
+            throw new IllegalArgumentException("El NIF indicado es incorrecto, debe contener 7 cifras y 1 carácter identificatorio.");
+        return nif;
     }
 
     public static Llamada addLlamada(){
@@ -50,6 +54,7 @@ public class datosLlamada {
         // Duración llamada
         System.out.print("Indique la duración de dicha llamada: ");
         double dur = Double.parseDouble(scan.nextLine());
+        if(dur <= 0) throw new IllegalArgumentException("La duración indicada de la llamada es invalida.");
         llamada.setDuracion(dur);
 
         return llamada;
@@ -65,7 +70,11 @@ public class datosLlamada {
 
         // NIF
         System.out.print("Indique el NIF del usuario que desea listar sus llamadas: ");
-        return scan.nextLine();
+        String nif = scan.nextLine();
+
+        if(nif.length() != 9)
+            throw new IllegalArgumentException("El NIF indicado es incorrecto, debe contener 7 cifras y 1 carácter identificatorio.");
+        return nif;
     }
 
     // ----------------------------------------------------------------------------
@@ -78,7 +87,11 @@ public class datosLlamada {
 
         // NIF
         System.out.print("Indique el NIF del usuario que desea listar sus llamadas: ");
-        return scan.nextLine();
+        String nif = scan.nextLine();
+
+        if(nif.length() != 9)
+            throw new IllegalArgumentException("El NIF indicado es incorrecto, debe contener 7 cifras y 1 carácter identificatorio.");
+        return nif;
     }
 
     public static Fecha getFechaIni(){

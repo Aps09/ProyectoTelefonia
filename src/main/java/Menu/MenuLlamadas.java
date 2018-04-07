@@ -2,12 +2,13 @@ package Menu;
 
 import Almacenamiento.Almacen;
 import Almacenamiento.gestionLlamadas;
+import Excepciones.NoEncontrado;
 
 import java.util.Scanner;
 
 public class MenuLlamadas {
 
-    public static Almacen main (Almacen almacen){
+    public static Almacen main (Almacen almacen) throws NoEncontrado {
         gestionLlamadas gestion = new gestionLlamadas(almacen);
         opcionesLlamadas[] menu = opcionesLlamadas.values();
         Scanner scan = new Scanner(System.in);
@@ -22,6 +23,8 @@ public class MenuLlamadas {
 
             System.out.print("Elija una opción: ");
             opc = scan.nextInt();
+
+            if(opc > 4 || opc <= 0) throw new IllegalArgumentException("La opción seleccionada no corresponde con ningún menú.");
 
             switch(opc){
                 case 1:
