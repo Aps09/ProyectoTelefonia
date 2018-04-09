@@ -65,7 +65,7 @@ public class datosFactura {
         mes = Integer.parseInt(scan.nextLine());
 
         System.out.print("Indique el año de la segunda fecha: ");
-        anyo = scan.nextInt();
+        anyo = Integer.parseInt(scan.nextLine());
 
         fin = new Fecha(dia,mes,anyo);
 
