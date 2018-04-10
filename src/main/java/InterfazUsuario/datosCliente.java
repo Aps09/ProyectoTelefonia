@@ -2,6 +2,8 @@ package InterfazUsuario;
 
 import Cliente.Cliente;
 import Cliente.Direccion;
+import Cliente.Empresa;
+import Cliente.Particular;
 import Fecha.Fecha;
 import Tarifa.Tarifa;
 import java.util.Scanner;
@@ -19,9 +21,20 @@ public class datosCliente {
     // ----------------------------------------------------------------------------
 
     public static Cliente addCliente() throws IllegalArgumentException{
-        Cliente cliente = new Cliente();
 
+        Cliente cliente;
         System.out.println(" ");
+        System.out.print("Indique si se trata de una empresa o un particular (seleccione mediante 1 ó 2 respectivamente): ");
+        int tipo = Integer.parseInt(scan.nextLine());
+
+        if(tipo == 1) {
+            cliente = new Empresa();
+        } else if (tipo == 2) {
+            System.out.print("Indique su apellido: ");
+            String apellido = scan.nextLine();
+            cliente = new Particular(apellido);
+        }else
+            throw new IllegalArgumentException("Ha elegido una opción invalida.");
 
         // Nombre
         System.out.print("Indique el nombre del cliente: ");
